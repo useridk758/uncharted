@@ -3,138 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNCHARTED | Sic Parvis Magna</title>
+    <title>UNCHARTED | Official Fan Site</title>
     <style>
         :root {
             --gold: #d4af37;
             --dark-slate: #1a1a1a;
-            --overlay: rgba(0, 0, 0, 0.5);
+            --overlay: rgba(0, 0, 0, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth; /* Makes the buttons slide smoothly */
         }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Background Wallpaper */
             background: linear-gradient(var(--overlay), var(--overlay)), 
                         url('https://img.goodfon.com/original/1920x1080/f/e4/uncharted-nathan-drake-drake.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Intro Fade-in/out Image Overlay */
+        /* Intro Animation */
         #intro-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: black; /* Background behind the fading image */
+            background: black;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            opacity: 1;
             transition: opacity 1.5s ease-in-out;
-            pointer-events: none; /* Allows clicking through once it fades */
+            pointer-events: none;
         }
 
         #intro-img {
             max-width: 80%;
-            max-height: 80%;
             opacity: 0;
             transition: opacity 2s ease-in-out;
         }
 
-        /* Hero Section */
+        /* Header with Logo Image */
         header {
-            height: 80vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: rgba(0, 0, 0, 0.3); /* Slight darkening for readability */
         }
 
-        h1 {
-            font-size: 5rem;
-            letter-spacing: 12px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            text-shadow: 4px 4px 15px rgba(0,0,0,1);
+        .main-logo {
+            width: 600px;
+            max-width: 90%;
+            filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+            margin-bottom: 20px;
         }
 
         .motto {
             font-style: italic;
             color: var(--gold);
             font-size: 1.5rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 8px black;
         }
 
         /* Navigation */
         nav {
-            background: rgba(17, 17, 17, 0.9);
-            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 1rem;
             position: sticky;
             top: 0;
             display: flex;
             justify-content: center;
             gap: 40px;
             z-index: 1000;
-            backdrop-filter: blur(5px);
             border-bottom: 2px solid var(--gold);
+            backdrop-filter: blur(10px);
         }
 
         nav a {
-            color: white;
+            color: #ccc;
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover {
             color: var(--gold);
+            text-shadow: 0 0 10px var(--gold);
         }
 
+        /* Content Sections */
         .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.7); /* Background for text readability */
-            margin-top: 50px;
-            margin-bottom: 50px;
-            border-radius: 8px;
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 60px;
+            background: rgba(10, 10, 10, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .card {
-            background: rgba(40, 40, 40, 0.8);
-            padding: 25px;
-            border-bottom: 3px solid var(--gold);
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 4px;
+            transition: 0.4s;
+            border: 1px solid transparent;
         }
 
         .card:hover {
-            background: rgba(60, 60, 60, 0.9);
-            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-10px);
         }
 
         footer {
             text-align: center;
-            padding: 50px;
-            background: rgba(0, 0, 0, 0.9);
-            font-size: 0.9rem;
-            color: #888;
+            padding: 60px;
+            background: black;
+            color: #444;
         }
     </style>
 </head>
@@ -145,38 +155,46 @@
     </div>
 
     <header>
-        <h1>UNCHARTED</h1>
-        <p class="motto">"Sic Parvis Magna" — Greatness from Small Beginnings</p>
+        <img src="https://i.pinimg.com/736x/1f/26/e7/1f26e7c64fc23b0a2bee362d51d9a858.jpg" alt="Uncharted Logo" class="main-logo">
+        <p class="motto">Sic Parvis Magna</p>
     </header>
 
     <nav>
-        <a href="#about">The Legend</a>
-        <a href="#games">The Journey</a>
-        <a href="#media">Media</a>
+        <a href="#legend">The Legend</a>
+        <a href="#journey">The Journey</a>
+        <a href="#artifacts">Artifacts</a>
     </nav>
 
-    <div class="container" id="about">
-        <h2>A Legacy of Adventure</h2>
-        <p>Nathan Drake's journey has taken him across the globe, uncovering lost civilizations and pirate utopias. This site serves as a tribute to the legendary series by Naughty Dog.</p>
-        
-        <div class="grid" id="games">
+    <div class="container" id="legend">
+        <h2>The Legend</h2>
+        <p>Nathan Drake isn't just a treasure hunter; he's a man driven by the mysteries of the past. From the discovery of El Dorado to the search for Libertalia, his adventures have redefined what it means to be an explorer.</p>
+    </div>
+
+    <div class="container" id="journey">
+        <h2>The Journey</h2>
+        <div class="grid">
             <div class="card">
-                <h3>The Lost Legacy</h3>
-                <p>Chloe Frazer and Nadine Ross venture into India's Western Ghats to find the Tusk of Ganesh.</p>
+                <h3>Drake's Fortune</h3>
+                <p>Tracking the lineage of Sir Francis Drake into the heart of the jungle.</p>
             </div>
             <div class="card">
-                <h3>The Movie</h3>
-                <p>A fresh take on the origins of Nate and Sully as they hunt for the Magellan gold.</p>
+                <h3>Among Thieves</h3>
+                <p>A journey through Nepal and the Himalayas to find the Cintamani Stone.</p>
             </div>
-            <div class="card">
-                <h3>The Comics</h3>
-                <p>Expanding the lore through various graphic novels and side stories.</p>
+            <div class="card :hover">
+                <h3>A Thief's End</h3>
+                <p>The final chapter involving Avery’s treasure and the ultimate sacrifice.</p>
             </div>
         </div>
     </div>
 
+    <div class="container" id="artifacts">
+        <h2>Artifacts</h2>
+        <p>Throughout the series, players collect hundreds of treasures. From ancient coins to golden idols, each piece tells a story of a civilization long forgotten by time.</p>
+    </div>
+
     <footer>
-        <p>&copy; 2026 UNCHARTED TRIBUTE. All images belong to their respective owners.</p>
+        <p>&copy; 2026 UNCHARTED FANSITE | Built for Adventure</p>
     </footer>
 
     <script>
@@ -184,19 +202,11 @@
             const introImg = document.getElementById('intro-img');
             const introOverlay = document.getElementById('intro-overlay');
 
-            // 1. Fade the image in
-            setTimeout(() => {
-                introImg.style.opacity = '1';
-            }, 500);
+            setTimeout(() => { introImg.style.opacity = '1'; }, 500);
 
-            // 2. Wait 2.5 seconds, then fade the whole overlay out
             setTimeout(() => {
                 introOverlay.style.opacity = '0';
-                
-                // 3. Remove from view completely after fade is done
-                setTimeout(() => {
-                    introOverlay.style.display = 'none';
-                }, 1500);
+                setTimeout(() => { introOverlay.style.display = 'none'; }, 1500);
             }, 3000);
         });
     </script>
